@@ -1,0 +1,26 @@
+{
+  "name": "schemassistant",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node dist/server.js",
+    "dev": "nodemon --ext 'ts' --exec 'npm run lint && npm run build && npm run start'",
+    "lint": "npx eslint",
+    "lint:fix": "npx eslint --fix"
+  },
+  "dependencies": {
+    "@koa/router": "^13.1.0",
+    "koa": "^2.15.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "@types/koa": "^2.15.0",
+    "@types/koa__router": "^12.0.4",
+    "@types/node": "^22.13.4",
+    "eslint": "^9.20.1",
+    "globals": "^15.15.0",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.24.1"
+  }
+}
