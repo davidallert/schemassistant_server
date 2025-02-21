@@ -1,11 +1,13 @@
 {
     "compilerOptions": {
       "target": "es2020",
-      "module": "esnext",
+      "moduleResolution": "nodenext",
+      "module": "nodenext",
       "outDir": "./dist",
       "strict": true,
       "esModuleInterop": true,
       "skipLibCheck": true,
       "forceConsistentCasingInFileNames": true
-    }
+    },
+    "exclude": ["tests", "tests-examples", "e2e", "playwright.config.ts"]
   }

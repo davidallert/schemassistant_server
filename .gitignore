@@ -1,2 +1,10 @@
 .env
-node_modules
+/node_modules
+/dist
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/e2e

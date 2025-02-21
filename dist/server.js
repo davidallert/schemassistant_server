@@ -1,5 +1,6 @@
 import app from './app.js';
 import router from './src/routes/router.js';
+import bodyParser from 'koa-bodyparser';
 const PORT = process.env.PORT || 3000;
 app.use(async (ctx, next) => {
     ctx.set("X-Frame-Options", "DENY"); // Prevent clickjacking
@@ -24,6 +25,7 @@ app.use(async (ctx, next) => {
     const ms = Date.now() - start;
     console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
 });
+app.use(bodyParser());
 app.use(router.routes());
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);

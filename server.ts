@@ -1,5 +1,6 @@
 import app from './app.js';
 import router from './src/routes/router.js';
+import bodyParser from 'koa-bodyparser';
 
 const PORT = process.env.PORT || 3000;
 
@@ -28,6 +29,7 @@ app.use(async (ctx, next) => {
   console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
 });
 
+app.use(bodyParser());
 app.use(router.routes());
 
 app.listen(PORT, () => {

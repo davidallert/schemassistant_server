@@ -8,6 +8,9 @@ export default [
     files: ["**/*.{ts}"]
   },
   {
+    ignores: ["dist/", "node_modules/", "tests", "tests-examples"],
+  },
+  {
     languageOptions: { globals: globals.node }
   },
   pluginJs.configs.recommended,
@@ -15,6 +18,6 @@ export default [
   {
     rules: {
       "semi": ["error", "always"],  // Enforce semicolons at the end of statements
-    }
+    },
   }
 ];
