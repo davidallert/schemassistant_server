@@ -18,7 +18,7 @@ const geminiService = {
 
     const cleanData = rawData.response.text().replace(/```(json|html)\n|\n```/g, '');
     console.log(cleanData);
-    return cleanData;
+    return html;
   }
 };
 

@@ -29,6 +29,8 @@ const scraperService = {
       }
     });
 
+    $('script').remove(); // Remove remaining scripts.
+
     // console.log(jsonLdObjects);
 
     // console.log($.html().length); // Get the number of characters. Could be displayed in the frontend?
