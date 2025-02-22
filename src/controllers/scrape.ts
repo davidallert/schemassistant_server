@@ -1,6 +1,6 @@
 import Koa from 'koa';
 import scraperService from '../services/scrape.js';
-import aiService from '../services/ai.js';
+import geminiService from '../services/gemini.js';
 
 interface RequestBody {
   url: string;
@@ -9,13 +9,11 @@ interface RequestBody {
 const scraperController = {
   scrapeRequest: async (ctx: Koa.Context) => {
     const requestBody: RequestBody = ctx.request.body as RequestBody;
-    const html = await scraperService.scrape(requestBody.url);
-    const result = await aiService.generateSchema(html);
-
-    console.log(result);
+    const html = await scraperService.scrape(requestBody.url) || "";
+    const result = await geminiService.generateSchema(html);
 
     ctx.body = {
-      data: html,
+      data: result,
     };
     ctx.type = 'application/json';
   },

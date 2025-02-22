@@ -2,7 +2,7 @@ import app from './app.js';
 import router from './src/routes/router.js';
 import bodyParser from 'koa-bodyparser';
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 app.use(async (ctx, next) => {
   ctx.set("X-Frame-Options", "DENY"); // Prevent clickjacking

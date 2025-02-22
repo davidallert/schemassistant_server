@@ -4,14 +4,16 @@
   "type": "module",
   "scripts": {
     "build": "npx tsc",
-    "start": "node dist/server.js",
-    "dev": "nodemon --ext 'ts' --exec 'npm run lint && npm run build && npm run start'",
+    "start": "npm run build && node dist/server.js",
+    "dev": "nodemon --ext 'ts' --exec 'npm run lint && npm run start'",
     "lint": "npx eslint",
     "lint:fix": "npx eslint --fix"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.22.0",
     "@koa/router": "^13.1.0",
     "cheerio": "^1.0.0",
+    "dotenv": "^16.4.7",
     "koa": "^2.15.4",
     "koa-bodyparser": "^4.4.1"
   },
