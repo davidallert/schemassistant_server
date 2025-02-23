@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@google/generative-ai": "^0.22.0",
+    "@koa/cors": "^5.0.0",
     "@koa/router": "^13.1.0",
     "cheerio": "^1.0.0",
     "dotenv": "^16.4.7",
@@ -21,6 +22,7 @@
     "@eslint/js": "^9.20.0",
     "@playwright/test": "^1.50.1",
     "@types/koa": "^2.15.0",
+    "@types/koa__cors": "^5.0.0",
     "@types/koa__router": "^12.0.4",
     "@types/koa-bodyparser": "^4.3.12",
     "@types/node": "^22.13.4",

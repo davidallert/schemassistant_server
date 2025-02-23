@@ -12,9 +12,7 @@ const scraperController = {
     const html = await scraperService.scrape(requestBody.url) || "";
     const result = await geminiService.generateSchema(html);
 
-    ctx.body = {
-      data: result,
-    };
+    ctx.body = result;
     ctx.type = 'application/json';
   },
 };

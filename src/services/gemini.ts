@@ -13,12 +13,12 @@ const geminiService = {
     const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
     const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
     const prompt = promptBase + html;
-    console.log(prompt);
+    // console.log(prompt);
     const rawData = await model.generateContent(prompt);
 
     const cleanData = rawData.response.text().replace(/```(json|html)\n|\n```/g, '');
-    console.log(cleanData);
-    return html;
+    // console.log(cleanData);
+    return cleanData;
   }
 };
 
