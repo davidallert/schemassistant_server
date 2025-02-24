@@ -17,7 +17,7 @@ const geminiService = {
     const rawData = await model.generateContent(prompt);
 
     const cleanData = rawData.response.text().replace(/```(json|html)\n|\n```/g, '');
-    // console.log(cleanData);
+    console.log(cleanData);
     return cleanData;
   }
 };
