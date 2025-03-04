@@ -8,12 +8,23 @@ interface RequestBody {
 
 const scraperController = {
   scrapeRequest: async (ctx: Koa.Context) => {
+    // Calculate request size.
+    const requestSize = Buffer.byteLength(JSON.stringify(ctx.request.body));
+
     const requestBody: RequestBody = ctx.request.body as RequestBody;
     const html = await scraperService.scrape(requestBody.url) || "";
     const result = await geminiService.generateSchema(html);
 
     ctx.body = result;
     ctx.type = 'application/json';
+
+    // Calculate response size.
+    const responseSize = Buffer.byteLength(JSON.stringify(ctx.response.body))
+
+    // Calculate total size and log all data.
+    console.log('requestSize', requestSize)
+    console.log('responseSize', responseSize)
+    console.log('total', (requestSize + responseSize))
   },
 };
 
