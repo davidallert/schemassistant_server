@@ -1,5 +1,5 @@
 # Schemaassistant Server
-**AI-based Schema.org Generator API – MVP Version**
+## AI-based Schema.org Generator API – MVP
 
 > ⚠️ This is a **Minimum Viable Product (MVP)** and is still under active development. Features may be incomplete, and the output may not be production-ready. Feedback and contributions are welcome.
 
