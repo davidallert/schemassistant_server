@@ -1,17 +1,33 @@
 # Schemaassistant Server
+**AI-based Schema.org Generator API – MVP Version**
 
-## AI-based Schema.org Generator API
+> ⚠️ This is a **Minimum Viable Product (MVP)** and is still under active development. Features may be incomplete, and the output may not be production-ready. Feedback and contributions are welcome.
 
-### Preconidtions
-Request a (free) API key from `https://ai.google.dev/gemini-api/docs/api-key` and create a .env file containing the following environment variables: `PORT=<your_port_number>`, `GEMINI_API_KEY=<your_gemini_api_key>`
+### Preconditions
+Request a (free) API key from https://ai.google.dev/gemini-api/docs/api-key, and create a `.env` file containing the following environment variables:
+
+PORT=<your_port_number>
+GEMINI_API_KEY=<your_gemini_api_key>
 
 ### Running the Server
-Enter `npm start` to start the API.
+Start the API by running:
+
+npm start
 
 ### Requesting Schema
-POST a URL in the format following format: `https://example.com` to the `/scrape` route.
-Include `"Content-Type": "application/json"` in the header.
-The API will fetch the HTML from the page and return a JSON-LD script containing Schema.org markup for the requested page.
+Send a `POST` request with a URL in the following format to the `/scrape` route:
+
+{
+  "url": "https://example.com"
+}
+
+Include the following header:
+
+Content-Type: application/json
+
+The API will fetch the HTML from the provided page and return a JSON-LD script containing Schema.org markup for that page.
 
 ### Recommended
-Validate the output using `https://validator.schema.org/` and `https://search.google.com/test/rich-results`.
+Validate the output using these tools:
+- https://validator.schema.org/
+- https://search.google.com/test/rich-results
