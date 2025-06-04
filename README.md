@@ -8,5 +8,6 @@ Request a (free) API key from `https://ai.google.dev/gemini-api/docs/api-key` an
 Enter `npm start` to start the API.
 
 ### Requesting Schema
-Send a URL in the format `https://example.com` to the `/scrape` route.
+POST a URL in the format following format: `https://example.com` to the `/scrape` route.
+Include `"Content-Type": "application/json"` in the header.
 The API will fetch the HTML from the page and return a Schema.org JSON-LD script.
